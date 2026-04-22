@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD Layout Exercise</title>
+    <style>
+        body {
+            background-color: #5bb2f1; /* 藍色外框背景 */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* 頂部綠色區塊 */
+        .header {
+            background-color: #add66e;
+            height: 120px;
+            border-radius: 5px;
+        }
+
+        /* 中間藍色區塊容器 */
+        .middle-section {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap; /* 讓子元素在空間不足時折行 */
+        }
+
+        .middle-item {
+            background-color: #55c2cf;
+            height: 80px;
+            flex: 1; /* 平分空間 */
+            border-radius: 5px;
+            min-width: 100px;
+        }
+
+        /* 底部灰色區塊容器 */
+        .footer-section {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-item {
+            background-color: #e9ecef;
+            height: 60px;
+            flex: 1;
+            border-radius: 5px;
+            min-width: 100px;
+        }
+
+        /* --- 響應式關鍵：當寬度小於 480px --- */
+        @media (max-width: 480px) {
+            /* 中間三個變垂直堆疊 */
+            .middle-item {
+                flex: 1 1 100%; 
+            }
+
+            /* 底部四個變兩欄排列 (每行兩個) */
+            .footer-item {
+                flex: 1 1 calc(50% - 10px); 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header"></div>
+
+        <div class="middle-section">
+            <div class="middle-item"></div>
+            <div class="middle-item"></div>
+            <div class="middle-item"></div>
+        </div>
+
+        <div class="footer-section">
+            <div class="footer-item"></div>
+            <div class="footer-item"></div>
+            <div class="footer-item"></div>
+            <div class="footer-item"></div>
+        </div>
+    </div>
+
+</body>
+</html>
